@@ -17,18 +17,23 @@ class Produit
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $image = null;
-
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
-    private ?string $prix = null;
+    #[ORM\Column(length: 255)]
+    private ?string $ref_fournisseur = null;
 
-    #[ORM\ManyToOne(inversedBy: 'produits')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?SousCategorie $sousCategorie = null;
+    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: 2)]
+    private ?string $prix_achat = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
+    #[ORM\Column]
+    private ?int $stock = null;
+
+    #[ORM\Column]
+    private ?bool $actif = null;
 
     public function getId(): ?int
     {
@@ -47,18 +52,6 @@ class Produit
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): static
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
     public function getDescription(): ?string
     {
         return $this->description;
@@ -71,26 +64,62 @@ class Produit
         return $this;
     }
 
-    public function getPrix(): ?string
+    public function getRefFournisseur(): ?string
     {
-        return $this->prix;
+        return $this->ref_fournisseur;
     }
 
-    public function setPrix(string $prix): static
+    public function setRefFournisseur(string $ref_fournisseur): static
     {
-        $this->prix = $prix;
+        $this->ref_fournisseur = $ref_fournisseur;
 
         return $this;
     }
 
-    public function getSousCategorie(): ?SousCategorie
+    public function getPrixAchat(): ?string
     {
-        return $this->sousCategorie;
+        return $this->prix_achat;
     }
 
-    public function setSousCategorie(?SousCategorie $sousCategorie): static
+    public function setPrixAchat(string $prix_achat): static
     {
-        $this->sousCategorie = $sousCategorie;
+        $this->prix_achat = $prix_achat;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getStock(): ?int
+    {
+        return $this->stock;
+    }
+
+    public function setStock(int $stock): static
+    {
+        $this->stock = $stock;
+
+        return $this;
+    }
+
+    public function isActif(): ?bool
+    {
+        return $this->actif;
+    }
+
+    public function setActif(bool $actif): static
+    {
+        $this->actif = $actif;
 
         return $this;
     }

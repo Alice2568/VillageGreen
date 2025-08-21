@@ -1,29 +1,50 @@
 @startuml
+class Fournisseur {
+	**id : int**
+	nom : string
+	email : string
+	telephone : string
+}
+
+class Client {
+	**id : int**
+	nom : string
+	prenom : string
+	email : string
+}
+
 class Produit {
 	**id : int**
 	nom : string
-	image : string
 	description : string
-	prix : string
-	<color:#0000dd>sousCategorie : SousCategorie</color>
+	ref_fournisseur : string
+	prix_achat : string
+	image : string
+	stock : int
+	actif : bool
 }
 
 class SousCategorie {
 	**id : int**
 	nom : string
 	image : string
-	<color:#0000dd>categorie : Categorie</color>
-	<color:#0000dd>produits : Produit[]</color>
+	<color:#0000dd>Categorie : Categorie</color>
+}
+
+class Commerciaux {
+	**id : int**
+	nom : string
+	prenom : string
+	email : string
+	telephone : string
 }
 
 class Categorie {
 	**id : int**
 	nom : string
-	image : string
 	<color:#0000dd>sousCategories : SousCategorie[]</color>
 }
 
-Produit "*"--"1" SousCategorie
 SousCategorie "*"--"1" Categorie
 
 

@@ -18,13 +18,10 @@ class Categorie
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $image = null;
-
     /**
      * @var Collection<int, SousCategorie>
      */
-    #[ORM\OneToMany(targetEntity: SousCategorie::class, mappedBy: 'categorie')]
+    #[ORM\OneToMany(targetEntity: SousCategorie::class, mappedBy: 'Categorie', orphanRemoval: true)]
     private Collection $sousCategories;
 
     public function __construct()
@@ -45,18 +42,6 @@ class Categorie
     public function setNom(string $nom): static
     {
         $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): static
-    {
-        $this->image = $image;
 
         return $this;
     }
