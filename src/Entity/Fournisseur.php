@@ -19,7 +19,7 @@ class Fournisseur
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 10)]
     private ?string $telephone = null;
 
     public function getId(): ?int
