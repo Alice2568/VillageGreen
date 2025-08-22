@@ -6,6 +6,20 @@ class Fournisseur {
 	telephone : string
 }
 
+class SousCategorie {
+	**id : int**
+	nom : string
+	image : string
+	<color:#0000dd>Categorie : Categorie</color>
+	<color:#0000dd>produits : Produit[]</color>
+}
+
+class Categorie {
+	**id : int**
+	nom : string
+	<color:#0000dd>sousCategories : SousCategorie[]</color>
+}
+
 class Client {
 	**id : int**
 	nom : string
@@ -22,13 +36,7 @@ class Produit {
 	image : string
 	stock : int
 	actif : bool
-}
-
-class SousCategorie {
-	**id : int**
-	nom : string
-	image : string
-	<color:#0000dd>Categorie : Categorie</color>
+	<color:#0000dd>souscategorie : SousCategorie</color>
 }
 
 class Commerciaux {
@@ -39,13 +47,9 @@ class Commerciaux {
 	telephone : string
 }
 
-class Categorie {
-	**id : int**
-	nom : string
-	<color:#0000dd>sousCategories : SousCategorie[]</color>
-}
-
 SousCategorie "*"--"1" Categorie
+SousCategorie "1"--"*" Produit
+Produit "*"--"1" SousCategorie
 
 
 hide methods
