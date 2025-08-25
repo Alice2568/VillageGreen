@@ -35,10 +35,6 @@ class Produit
     #[ORM\Column]
     private ?bool $actif = null;
 
-    #[ORM\ManyToOne(inversedBy: 'produits')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?SousCategorie $sous_Categorie = null;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -124,18 +120,6 @@ class Produit
     public function setActif(bool $actif): static
     {
         $this->actif = $actif;
-
-        return $this;
-    }
-
-    public function getSousCategorie(): ?SousCategorie
-    {
-        return $this->sous_Categorie;
-    }
-
-    public function setSousCategorie(?SousCategorie $sous_Categorie): static
-    {
-        $this->sous_Categorie = $sous_Categorie;
 
         return $this;
     }
