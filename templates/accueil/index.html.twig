@@ -9,7 +9,8 @@
     <div class="row">
         {% for categorie in categories %}
             <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                {{categorie.nom}}
+                <a href="/categorie/{{categorie.id}}">{{categorie.nom}}
+                </a>
             </div>
         {% endfor %}
     </div>

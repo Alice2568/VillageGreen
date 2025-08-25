@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Categorie;
 use App\Repository\CategorieRepository;
+use App\Repository\SousCategorieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -23,6 +25,15 @@ final class AccueilController extends AbstractController
     {
         return $this->render('accueil/contact.html.twig', [
             'controller_name' => 'AccueilController',
+        ]);
+    }
+    #[Route('/categorie/{categorie}', name: 'app_categorie')]
+    public function categorie(Categorie $categorie): Response
+    {
+        
+        return $this->render('produit/categorie.html.twig', [
+           'categorie' => $categorie,
+            
         ]);
     }
 }

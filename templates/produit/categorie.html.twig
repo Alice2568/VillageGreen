@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{categorie.nom}}!{% endblock %}
+
+{% block body %}
+<h1>{{categorie.nom}}</h1>
+
+<div class="container">
+    <div class="row">
+        {% for sousCategorie in categorie.sousCategories %}
+            <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                <a href="/produit/{{sousCategorie.id}}">{{sousCategorie.nom}}
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -22,6 +22,7 @@ class Produit {
 	image : string
 	stock : int
 	actif : bool
+	<color:#0000dd>sous_Categorie : SousCategorie</color>
 }
 
 class SousCategorie {
@@ -29,6 +30,7 @@ class SousCategorie {
 	nom : string
 	image : string
 	<color:#0000dd>Categorie : Categorie</color>
+	<color:#0000dd>produits : Produit[]</color>
 }
 
 class Commerciaux {
@@ -45,6 +47,7 @@ class Categorie {
 	<color:#0000dd>sousCategories : SousCategorie[]</color>
 }
 
+Produit "*"--"1" SousCategorie
 SousCategorie "*"--"1" Categorie
 
 
