@@ -25,6 +25,17 @@ class SousCategorie
     #[ORM\JoinColumn(nullable: false)]
     private ?Categorie $Categorie = null;
 
+    /**
+     * @var Collection<int, Produit>
+     */
+    #[ORM\OneToMany(targetEntity: Produit::class, mappedBy: 'sousCategorie', orphanRemoval: true)]
+    private Collection $produits;
+
+    public function __construct()
+    {
+        $this->produits = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -62,6 +73,36 @@ class SousCategorie
     public function setCategorie(?Categorie $Categorie): static
     {
         $this->Categorie = $Categorie;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Produit>
+     */
+    public function getProduits(): Collection
+    {
+        return $this->produits;
+    }
+
+    public function addProduit(Produit $produit): static
+    {
+        if (!$this->produits->contains($produit)) {
+            $this->produits->add($produit);
+            $produit->setSousCategorie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduit(Produit $produit): static
+    {
+        if ($this->produits->removeElement($produit)) {
+            // set the owning side to null (unless already changed)
+            if ($produit->getSousCategorie() === $this) {
+                $produit->setSousCategorie(null);
+            }
+        }
 
         return $this;
     }

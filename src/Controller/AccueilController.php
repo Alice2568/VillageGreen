@@ -27,13 +27,5 @@ final class AccueilController extends AbstractController
             'controller_name' => 'AccueilController',
         ]);
     }
-    #[Route('/categorie/{categorie}', name: 'app_categorie')]
-    public function categorie(Categorie $categorie): Response
-    {
-        
-        return $this->render('produit/categorie.html.twig', [
-           'categorie' => $categorie,
-            
-        ]);
-    }
+   
 }

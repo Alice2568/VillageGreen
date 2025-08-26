@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Categorie;
+use App\Entity\Produit;
 use App\Entity\SousCategorie;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -22,6 +23,17 @@ class AppFixtures extends Fixture
         $sc1 ->setImage("/img/guitareselectrique.png");
         $sc1 ->setCategorie($c1);
         $manager ->persist($sc1);
+
+        $p1 = new Produit();
+        $p1 ->setNom("Fender Stratocaster");
+        $p1 ->setImage("/img/Fenderstratocaster.png");
+        $p1 -> setActif(True);
+        $p1 -> setDescription("Magnifique guitare fender authentique");
+        $p1 ->setsousCategorie($sc1);
+        $p1 -> setPrixAchat(999.99);
+        $p1 -> setRefFournisseur("FS1568");
+        $p1 -> setStock(5);
+        $manager ->persist($p1);
 
         $sc2 = new SousCategorie();
         $sc2 ->setNom("Guitares acoustiques");
