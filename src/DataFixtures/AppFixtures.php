@@ -26,7 +26,7 @@ class AppFixtures extends Fixture
 
         $p1 = new Produit();
         $p1 ->setNom("Fender Stratocaster");
-        $p1 ->setImage("/img/Fenderstratocaster.png");
+        $p1 ->setImage("/img/Fenderstratocaster.jpg");
         $p1 -> setActif(True);
         $p1 -> setDescription("Magnifique guitare fender authentique");
         $p1 ->setsousCategorie($sc1);
@@ -34,6 +34,17 @@ class AppFixtures extends Fixture
         $p1 -> setRefFournisseur("FS1568");
         $p1 -> setStock(5);
         $manager ->persist($p1);
+
+        $p2 = new Produit();
+        $p2 ->setNom("Fender Stratocaster");
+        $p2 ->setImage("/img/Fenderstratocaster.png");
+        $p2 -> setActif(True);
+        $p2 -> setDescription("Magnifique guitare fender authentique");
+        $p2 ->setsousCategorie($sc1);
+        $p2 -> setPrixAchat(999.99);
+        $p2 -> setRefFournisseur("FS1568");
+        $p2 -> setStock(5);
+        $manager ->persist($p2);
 
         $sc2 = new SousCategorie();
         $sc2 ->setNom("Guitares acoustiques");
