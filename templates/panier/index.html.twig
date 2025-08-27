@@ -10,6 +10,8 @@
         <br>
         {{ elt.quantite }}
         </div>
+        <a class="btn btn-primary" href="panier/add/{{ elt.produit.id}}">rajouter au panier</a>
+        <a class="btn btn-danger" href="panier/delete/{{ elt.produit.id }}">supprimer du panier</a>
     {% endfor %}
 
 {% endblock %}

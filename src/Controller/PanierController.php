@@ -4,21 +4,23 @@ namespace App\Controller;
 
 use App\Entity\Produit;
 use App\Repository\ProduitRepository;
+use App\Service\Panier;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 final class PanierController extends AbstractController
 {
     #[Route('/panier', name: 'app_panier')]
-    public function index(Request $request, ProduitRepository $repo): Response
+    public function index(Panier $panier, ProduitRepository $repo): Response
     {    
         $panier_complet = [];
-        $session = $request ->getSession();
-        $panier = $session ->get('panier', []);
         
-        foreach( $panier as $id => $quantite)
+        
+        
+        foreach( $panier->liste() as $id => $quantite)
         {
             $produit = $repo->find($id);
             $panier_complet[]= [
@@ -34,17 +36,9 @@ final class PanierController extends AbstractController
     }
 
     #[Route('/panier/add/{id}', name: 'app_panier_add')]
-    public function add(Produit $produit, Request $request): Response
+    public function add(Produit $produit, Panier $panier): Response
     {
-        $session = $request ->getSession();
-        $panier = $session ->get('panier', []);
-
-        if(isset($panier[$produit->getId()]))
-            $panier[$produit->getId()]++;
-        else
-        $panier[$produit->getId()] = 1;
-
-        $session->set('panier' , $panier);
+       $panier->add($produit->getId());
 
         return $this->redirectToRoute('app_panier');
         return $this->render('panier/index.html.twig', [
@@ -53,23 +47,14 @@ final class PanierController extends AbstractController
     }
 
     #[Route('/panier/delete/{id}', name: 'app_panier_delete')]
-    public function delete(Produit $produit, Request $request): Response
+    public function delete(Produit $produit, Panier $panier): Response
     {
-        $session = $request ->getSession();
-        $panier = $session ->get('panier', []);
-
-        if(isset($panier[$produit->getId()]))
-            $panier[$produit->getId()]--;
-            if  ($panier[$produit->getId()] == 0){
-                unset($panier[$produit->getId()]);
-            }
-        
-
-        $session->set('panier' , $panier);
+        $panier->delete($produit->getId());
 
         return $this->redirectToRoute('app_panier');
         return $this->render('panier/index.html.twig', [
             'controller_name' => 'PanierController',
         ]);
     }
+    
 }
