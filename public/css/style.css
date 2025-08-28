@@ -1,3 +1,7 @@
-h3 {
+h1 {
     color: coral;
+}
+
+li.nav-item {
+    list-style: none;
 }
