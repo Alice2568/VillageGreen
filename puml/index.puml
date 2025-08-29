@@ -6,6 +6,13 @@ class Fournisseur {
 	telephone : string
 }
 
+class Contact {
+	**id : int**
+	objet : string
+	email : string
+	message : string
+}
+
 class SousCategorie {
 	**id : int**
 	nom : string
