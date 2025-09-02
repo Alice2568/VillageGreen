@@ -140,27 +140,27 @@ class AppFixtures extends Fixture
         $ga3->setStock(2);
         $manager->persist($ga3);
 
-        $a4 = new Produit();
-        $a4->setNom("Gibson J-45");
-        $a4->setImage("/img/gibson_j45.png");
-        $a4->setActif(true);
-        $a4->setDescription("La Gibson J-45, une guitare acoustique de légende au son chaud et rond.");
-        $a4->setSousCategorie($sc2);
-        $a4->setPrixAchat(2499.99);
-        $a4->setRefFournisseur("GBJ4509");
-        $a4->setStock(3);
-        $manager->persist($a4);
+        $ga4 = new Produit();
+        $ga4->setNom("Gibson J-45");
+        $ga4->setImage("/img/gibson_j45.png");
+        $ga4->setActif(true);
+        $ga4->setDescription("La Gibson J-45, une guitare acoustique de légende au son chaud et rond.");
+        $ga4->setSousCategorie($sc2);
+        $ga4->setPrixAchat(2499.99);
+        $ga4->setRefFournisseur("GBJ4509");
+        $ga4->setStock(3);
+        $manager->persist($ga4);
 
-        $a5 = new Produit();
-        $a5->setNom("Takamine GD30");
-        $a5->setImage("/img/takamine_gd30.png");
-        $a5->setActif(true);
-        $a5->setDescription("Takamine GD30, acoustique fiable avec un excellent rapport qualité/prix.");
-        $a5->setSousCategorie($sc2);
-        $a5->setPrixAchat(399.99);
-        $a5->setRefFournisseur("TK3021");
-        $a5->setStock(6);
-        $manager->persist($a5);
+        $ga5 = new Produit();
+        $ga5->setNom("Takamine GD30");
+        $ga5->setImage("/img/takamine_gd30.png");
+        $ga5->setActif(true);
+        $ga5->setDescription("Takamine GD30, acoustique fiable avec un excellent rapport qualité/prix.");
+        $ga5->setSousCategorie($sc2);
+        $ga5->setPrixAchat(399.99);
+        $ga5->setRefFournisseur("TK3021");
+        $ga5->setStock(6);
+        $manager->persist($ga5);
 
         $sc3 = new SousCategorie();
         $sc3 ->setNom("Guitares classiques");
@@ -300,11 +300,123 @@ class AppFixtures extends Fixture
         $sc1 ->setCategorie($c2);
         $manager ->persist($sc1);
 
+        $ba1 = new Produit();
+$ba1->setNom("Pearl Export EXX725SP");
+$ba1->setImage("/img/pearl_export.png");
+$ba1->setActif(true);
+$ba1->setDescription("Batterie Pearl Export EXX725SP, idéale pour les batteurs intermédiaires.");
+$ba1->setSousCategorie($sc1);
+$ba1->setPrixAchat(799.99);
+$ba1->setRefFournisseur("PR4521");
+$ba1->setStock(4);
+$manager->persist($ba1);
+
+$ba2 = new Produit();
+$ba2->setNom("Yamaha Stage Custom Birch");
+$ba2->setImage("/img/yamaha_stagecustom.png");
+$ba2->setActif(true);
+$ba2->setDescription("Yamaha Stage Custom Birch, son puissant et clair, parfait pour la scène.");
+$ba2->setSousCategorie($sc1);
+$ba2->setPrixAchat(999.99);
+$ba2->setRefFournisseur("YM6234");
+$ba2->setStock(3);
+$manager->persist($ba2);
+
+$ba3 = new Produit();
+$ba3->setNom("Tama Imperialstar 22");
+$ba3->setImage("/img/tama_imperialstar.png");
+$ba3->setActif(true);
+$ba3->setDescription("Tama Imperialstar 22, idéale pour les débutants et avancés.");
+$ba3->setSousCategorie($sc1);
+$ba3->setPrixAchat(699.99);
+$ba3->setRefFournisseur("TM3321");
+$ba3->setStock(6);
+$manager->persist($ba3);
+
+$ba4 = new Produit();
+$ba4->setNom("Gretsch Catalina Maple");
+$ba4->setImage("/img/gretsch_catalina.png");
+$ba4->setActif(true);
+$ba4->setDescription("Gretsch Catalina Maple, batterie haut de gamme avec un son chaleureux.");
+$ba4->setSousCategorie($sc1);
+$ba4->setPrixAchat(1199.99);
+$ba4->setRefFournisseur("GR1289");
+$ba4->setStock(2);
+$manager->persist($ba4);
+
+$ba5 = new Produit();
+$ba5->setNom("Ludwig Breakbeats Questlove");
+$ba5->setImage("/img/ludwig_breakbeats.png");
+$ba5->setActif(true);
+$ba5->setDescription("Ludwig Breakbeats, batterie compacte créée avec Questlove, idéale pour le live et le transport.");
+$ba5->setSousCategorie($sc1);
+$ba5->setPrixAchat(499.99);
+$ba5->setRefFournisseur("LD7851");
+$ba5->setStock(5);
+$manager->persist($ba5);
+
+
         $sc2 = new SousCategorie();
         $sc2 ->setNom("Batteries électroniques");
         $sc2 ->setImage("/img/batteries_électroniques.png");
         $sc2 ->setCategorie($c2);
         $manager ->persist($sc2);
+
+        $be1 = new Produit();
+$be1->setNom("Roland TD-1DMK");
+$be1->setImage("/img/roland_td1dmk.png");
+$be1->setActif(true);
+$be1->setDescription("Roland TD-1DMK, batterie électronique compacte avec pads en mesh.");
+$be1->setSousCategorie($sc2);
+$be1->setPrixAchat(649.99);
+$be1->setRefFournisseur("RL1021");
+$be1->setStock(6);
+$manager->persist($be1);
+
+$be2 = new Produit();
+$be2->setNom("Alesis Nitro Mesh Kit");
+$be2->setImage("/img/alesis_nitro.png");
+$be2->setActif(true);
+$be2->setDescription("Alesis Nitro Mesh, batterie électronique abordable et parfaite pour les débutants.");
+$be2->setSousCategorie($sc2);
+$be2->setPrixAchat(399.99);
+$be2->setRefFournisseur("AL3321");
+$be2->setStock(8);
+$manager->persist($be2);
+
+$be3 = new Produit();
+$be3->setNom("Yamaha DTX402K");
+$be3->setImage("/img/yamaha_dtx402k.png");
+$be3->setActif(true);
+$be3->setDescription("Yamaha DTX402K, batterie électronique avec plus de 280 sons et exercices intégrés.");
+$be3->setSousCategorie($sc2);
+$be3->setPrixAchat(459.99);
+$be3->setRefFournisseur("YM4520");
+$be3->setStock(7);
+$manager->persist($be3);
+
+$be4 = new Produit();
+$be4->setNom("Roland TD-17KVX");
+$be4->setImage("/img/roland_td17kvx.png");
+$be4->setActif(true);
+$be4->setDescription("Roland TD-17KVX, une batterie électronique haut de gamme avec pads réalistes.");
+$be4->setSousCategorie($sc2);
+$be4->setPrixAchat(1699.99);
+$be4->setRefFournisseur("RL1788");
+$be4->setStock(3);
+$manager->persist($be4);
+
+$be5 = new Produit();
+$be5->setNom("Millenium MPS-850");
+$be5->setImage("/img/millenium_mps850.png");
+$be5->setActif(true);
+$be5->setDescription("Millenium MPS-850, un excellent rapport qualité/prix avec pads double zone.");
+$be5->setSousCategorie($sc2);
+$be5->setPrixAchat(699.99);
+$be5->setRefFournisseur("ML8502");
+$be5->setStock(4);
+$manager->persist($be5);
+
 
         $sc3 = new SousCategorie();
         $sc3 ->setNom("Percussions africaines");
@@ -312,11 +424,57 @@ class AppFixtures extends Fixture
         $sc3 ->setCategorie($c2);
         $manager ->persist($sc3);
 
+        $pa1 = new Produit();
+$pa1->setNom("Djembe en bois - 12 pouces");
+$pa1->setImage("/img/djembe_12.png");
+$pa1->setActif(true);
+$pa1->setDescription("Djembé traditionnel africain en bois massif avec peau de chèvre.");
+$pa1->setSousCategorie($sc3);
+$pa1->setPrixAchat(149.99);
+$pa1->setRefFournisseur("DJ1201");
+$pa1->setStock(7);
+$manager->persist($pa1);
+
+$pa2 = new Produit();
+$pa2->setNom("Cajón africain artisanal");
+$pa2->setImage("/img/cajon_africain.png");
+$pa2->setActif(true);
+$pa2->setDescription("Cajón africain fabriqué à la main, idéal pour les rythmes traditionnels.");
+$pa2->setSousCategorie($sc3);
+$pa2->setPrixAchat(199.99);
+$pa2->setRefFournisseur("CJ4520");
+$pa2->setStock(5);
+$manager->persist($pa2);
+
+
         $sc4 = new SousCategorie();
         $sc4 ->setNom("Percussions latines");
         $sc4 ->setImage("/img/percussions_latines.png");
         $sc4 ->setCategorie($c2);
         $manager ->persist($sc4);
+
+        $pl1 = new Produit();
+$pl1->setNom("Congas Latin Percussion Aspire");
+$pl1->setImage("/img/congas_lp.png");
+$pl1->setActif(true);
+$pl1->setDescription("Jeu de congas Latin Percussion Aspire, parfait pour la salsa et les musiques latines.");
+$pl1->setSousCategorie($sc4);
+$pl1->setPrixAchat(499.99);
+$pl1->setRefFournisseur("LP4521");
+$pl1->setStock(3);
+$manager->persist($pl1);
+
+$pl2 = new Produit();
+$pl2->setNom("Bongos Meinl Headliner");
+$pl2->setImage("/img/bongos_meinl.png");
+$pl2->setActif(true);
+$pl2->setDescription("Bongos Meinl Headliner, son clair et puissant pour l’accompagnement rythmique.");
+$pl2->setSousCategorie($sc4);
+$pl2->setPrixAchat(149.99);
+$pl2->setRefFournisseur("MN2145");
+$pl2->setStock(6);
+$manager->persist($pl2);
+
 
         $sc5 = new SousCategorie();
         $sc5 ->setNom("Accessoires percussions");
@@ -333,6 +491,62 @@ class AppFixtures extends Fixture
         $sc1 ->setImage("/img/pianos_acoustiques.png");
         $sc1 ->setCategorie($c3);
         $manager ->persist($sc1);
+
+        $pa1 = new Produit();
+$pa1->setNom("Yamaha U1");
+$pa1->setImage("/img/yamaha_u1.png");
+$pa1->setActif(true);
+$pa1->setDescription("Piano droit Yamaha U1, un classique apprécié des pianistes professionnels.");
+$pa1->setSousCategorie($sc1);
+$pa1->setPrixAchat(8999.99);
+$pa1->setRefFournisseur("YMU1001");
+$pa1->setStock(2);
+$manager->persist($pa1);
+
+$pa2 = new Produit();
+$pa2->setNom("Steinway & Sons Model D");
+$pa2->setImage("/img/steinway_d.png");
+$pa2->setActif(true);
+$pa2->setDescription("Steinway Model D, piano à queue de concert d’exception.");
+$pa2->setSousCategorie($sc1);
+$pa2->setPrixAchat(149999.99);
+$pa2->setRefFournisseur("STWD888");
+$pa2->setStock(1);
+$manager->persist($pa2);
+
+$pa3 = new Produit();
+$pa3->setNom("Kawai K-300");
+$pa3->setImage("/img/kawai_k300.png");
+$pa3->setActif(true);
+$pa3->setDescription("Kawai K-300, piano droit moderne au toucher précis et puissant.");
+$pa3->setSousCategorie($sc1);
+$pa3->setPrixAchat(7499.99);
+$pa3->setRefFournisseur("KWK3007");
+$pa3->setStock(3);
+$manager->persist($pa3);
+
+$pa4 = new Produit();
+$pa4->setNom("Bosendorfer 170VC");
+$pa4->setImage("/img/bosendorfer_170vc.png");
+$pa4->setActif(true);
+$pa4->setDescription("Bosendorfer 170VC, piano à queue au son riche et expressif.");
+$pa4->setSousCategorie($sc1);
+$pa4->setPrixAchat(89999.99);
+$pa4->setRefFournisseur("BSD170V");
+$pa4->setStock(1);
+$manager->persist($pa4);
+
+$pa5 = new Produit();
+$pa5->setNom("Petrof P125 G1");
+$pa5->setImage("/img/petrof_p125.png");
+$pa5->setActif(true);
+$pa5->setDescription("Petrof P125, piano droit réputé pour son timbre chaleureux.");
+$pa5->setSousCategorie($sc1);
+$pa5->setPrixAchat(11999.99);
+$pa5->setRefFournisseur("PTF125G");
+$pa5->setStock(2);
+$manager->persist($pa5);
+
 
         $sc2 = new SousCategorie();
         $sc2 ->setNom("Pianos numériques");
