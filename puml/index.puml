@@ -11,6 +11,11 @@ class Client {
 	nom : string
 	prenom : string
 	email : string
+	mot_de_passe : string
+	IsVerified : bool
+	adresse : string
+	codePostal : string
+	ville : string
 }
 
 class Produit {
