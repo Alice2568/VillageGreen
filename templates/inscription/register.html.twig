@@ -4,18 +4,23 @@
 
 
 
-<h1 class="text-center text-white ">Inscription</h1>
+<h1 class="text-center ">Inscription</h1>
 
-<div class ="text-white align-items-center py-4 d-flex">
+<div class =" align-items-center py-4 d-flex">
 
     
 
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
+    <div class="row">
         {{ form_row(registrationForm.nom, {
-            attr: { class: 'form-control mb-3' }
-        }) }}
+            attr: { class: 'form-control mb-3'}
+        } ) }}
+        
+       
+    </div>
+        
         {{ form_row(registrationForm.prenom, {
             attr: { class: 'form-control mb-3' }
         }) }}
@@ -41,7 +46,7 @@
         <button type="submit" class="btn btn-outline-danger col-5 mx-auto mt-3 center">S'inscrire</button></div>
     {{ form_end(registrationForm) }}
 </div>
-   <div class="text-white text-center"> <p>Déjà inscrit? <a href="#">  Me connecter</a></p></div>
+   <div class=" text-center"> <p>Déjà inscrit? <a href="#">  Me connecter</a></p></div>
 
  
 

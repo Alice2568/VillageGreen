@@ -1,5 +1,26 @@
+html body.background_gradient {
+    
+    background: 
+    linear-gradient(
+        to bottom,
+        #EDDEC2 0%,               /* couleur pleine en haut */
+        rgb(237, 222, 194) 30%,  /* presque opaque */
+        rgba(237, 222, 194, 0.8) 50%,  /* semi-transparent */
+        rgba(237, 222, 194, 0.5) 85%,  /* encore plus transparent */
+        rgba(237, 222, 194, 0) 100%    /* totalement transparent en bas */
+    ),
+    url("/img/4941521.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* optionnel : effet "parallaxe" */
+
+}
+
 h1 {
     color: coral;
+}
+nav.bg_EDDEC2 {
+    background-color: #EDDEC2;
 }
 
 li.nav-item {

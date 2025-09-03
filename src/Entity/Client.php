@@ -4,9 +4,11 @@ namespace App\Entity;
 
 use App\Repository\ClientRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: ClientRepository::class)]
-class Client
+class Client implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -23,7 +25,7 @@ class Client
     private ?string $email = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $mot_de_passe = null;
+    private ?string $password = null;
 
     #[ORM\Column]
     private ?bool $IsVerified = False;
@@ -78,14 +80,14 @@ class Client
         return $this;
     }
 
-    public function getMotDePasse(): ?string
+    public function getPassword(): ?string
     {
-        return $this->mot_de_passe;
+        return $this->password;
     }
 
-    public function setMotDePasse(string $mot_de_passe): static
+    public function setPassword(string $password): self
     {
-        $this->mot_de_passe = $mot_de_passe;
+        $this->password = $password;
 
         return $this;
     }
@@ -136,5 +138,21 @@ class Client
         $this->ville = $ville;
 
         return $this;
+    }
+
+
+    public function getUserIdentifier(): string
+    {
+    return (string) $this->email;
+    }
+
+    public function eraseCredentials(): void {
+
+    }
+
+    public function getRoles(): array
+    {
+    // par défaut, un client est un simple utilisateur
+    return ['ROLE_USER'];
     }
 }
