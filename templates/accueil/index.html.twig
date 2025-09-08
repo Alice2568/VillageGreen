@@ -8,12 +8,18 @@
 <div class="container">
     <div class="row">
         {% for categorie in categories %}
-            <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-            <img src={{categorie.image}}
-                <a href="/categorie/{{categorie.id}}">{{categorie.nom}}
-                </a>
-            </div>
-        {% endfor %}
+
+        <div class="card" style="width: 18rem;">
+        <img src={{categorie.randomImage}} class="card-img-top" alt="...">
+            <div class="card-body">
+         <a href="/categorie/{{ categorie.id}}"><h5 class="card-title">{{ categorie.nom }}</h5></a>
+            
     </div>
+    </div>
+
+
+            
+        {% endfor %}
+    </div> 
 </div>
 {% endblock %}

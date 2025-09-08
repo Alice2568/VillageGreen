@@ -8,10 +8,16 @@
 <div class="container">
     <div class="row">
         {% for sousCategorie in categorie.sousCategories %}
-            <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                <a href="/produits/{{sousCategorie.id}}">{{sousCategorie.nom}}
-                </a>
-            </div>
+   
+
+        <div class="card" style="width: 18rem;">
+        <img src={{sousCategorie.image}} class="card-img-top" alt="...">
+            <div class="card-body">
+         <a href="/produits/{{ sousCategorie.id}}"><h5 class="card-title">{{ sousCategorie.nom }}</h5></a>
+            
+    </div>
+    </div>
+           
         {% endfor %}
     </div>
 </div>

@@ -9,6 +9,7 @@
     <div class="row">
         {% for produit in sousCategorie.produits %}
             <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+            <img src="{{produit.image}}">
                 <a href="/produit/{{produit.id}}">{{produit.nom}}
                 </a>
             </div>

@@ -26,3 +26,49 @@ nav.bg_EDDEC2 {
 li.nav-item {
     list-style: none;
 }
+
+/*footer */
+footer {
+    flex-shrink: 0;
+    border-top: 1px solid #1E1E1E;
+    color: white;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .img-responsive-height {
+      height: 170px !important;
+    }}
+
+.bloc{
+    width: 25%;
+    margin: 0 30px;
+}
+
+
+.liste-plan, .liste-media, .liste-contact {
+    list-style-type: none;
+}
+.liste-plan li, .liste-media li, .liste-contact li {
+    padding: 2px 0;
+}
+
+.liste-plan a, .liste-media a, .liste-contact a {
+    text-decoration: none;
+    color : rgb(211, 58, 127);
+}
+.liste-plan a:hover, .liste-media a:hover, .liste-contact a:hover{
+    color:beige;
+}
+
+.liste-media img {
+    width: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: #fffcfc;
+}

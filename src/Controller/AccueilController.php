@@ -15,6 +15,20 @@ final class AccueilController extends AbstractController
     public function accueil(CategorieRepository $repository): Response
     {
         $categories = $repository->findAll();
+
+        foreach ($categories as $categorie) {
+            $souscats = $categorie->getSousCategories()->toArray();
+            if (!empty($souscats)) {
+                $randomSouscat = $souscats[array_rand($souscats)];
+                // On stocke l'image choisie dans une propriété temporaire
+                $categorie->randomImage = $randomSouscat->getImage();
+            } else {
+                // fallback si pas de sous-catégorie
+                $categorie->randomImage = $categorie->getImage();
+            }
+        }
+
+
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController',
             'categories' => $categories
