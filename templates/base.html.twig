@@ -16,7 +16,7 @@
     </head>
     <body class="background_gradient">
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="bg_EDDEC2 navbar navbar-expand-lg ">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Village Green</a>
     <li class="nav-item">
@@ -33,12 +33,9 @@
   
 </nav>
 <!-- Navbar -->
-        {% block body %}
-        
-        {% endblock %}
+        {% block body %}{% endblock %}
         
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
-    {% include 'partials/_footer.html.twig' %}
     </body>
 </html>

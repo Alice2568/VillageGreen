@@ -20,7 +20,7 @@ h1 {
     color: coral;
 }
 nav.bg_EDDEC2 {
-    background-color: #EDDEC2;
+    background-color: #EDDEC2 !important;
 }
 
 li.nav-item {
@@ -30,20 +30,27 @@ li.nav-item {
 /*footer */
 footer {
     flex-shrink: 0;
-    border-top: 2px solid #95b78b;
-    color: white;
-    width: 100%;
+    color: black;
+    width: 100% !important;
     background-color: #EDDEC2;
 }
 
-@media (min-width: 768px) {
+.hr-footer {
+    color: #95b78b;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgb(117, 173, 100), rgba(0,0,0,0));
+    height: 3px;
+    border: 1px;
+    border-color: #95b78b;
+}
+/*@media (min-width: 768px) {
     .img-responsive-height {
       height: 170px !important;
-    }}
+      width: 100%;
+    }}*/
 
 .bloc{
     width: 25%;
-    margin: 0 30px;
+    margin: 0 0px;
 }
 
 
@@ -51,12 +58,12 @@ footer {
     list-style-type: none;
 }
 .liste-plan li, .liste-media li, .liste-contact li {
-    padding: 2px 0;
+    padding: 2px 2px;
 }
 
 .liste-plan a, .liste-media a, .liste-contact a {
     text-decoration: none;
-    color : rgb(211, 58, 127);
+    color : #ca503a;
 }
 .liste-plan a:hover, .liste-media a:hover, .liste-contact a:hover{
     color:beige;
@@ -68,8 +75,12 @@ footer {
 
 .footer-bottom {
     text-align: center;
-    border-top: 1px solid #95b78b;
     padding-top: 1rem;
     font-size: 0.9rem;
-    color: #fffcfc;
+    color: black;
 }
+/* fin footer */
+
+/* card */
+
+/* fin card */
