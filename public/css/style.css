@@ -20,11 +20,20 @@ h1 {
     color: coral;
 }
 nav.bg_EDDEC2 {
-    background-color: #EDDEC2 !important;
+    background-color: #EDDEC2;
 }
 
 li.nav-item {
     list-style: none;
+}
+.navbar_logo {
+    height: 70px;
+    width: 70px;
+}
+
+.nav-search {
+    background-color:rgb(117, 173, 100) !important;
+
 }
 
 /*footer */
@@ -78,6 +87,10 @@ footer {
     padding-top: 1rem;
     font-size: 0.9rem;
     color: black;
+}
+
+.btn-footer{
+    background-color: #ca503a;
 }
 /* fin footer */
 
