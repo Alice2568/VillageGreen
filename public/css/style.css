@@ -30,9 +30,10 @@ li.nav-item {
 /*footer */
 footer {
     flex-shrink: 0;
-    border-top: 1px solid #1E1E1E;
+    border-top: 2px solid #95b78b;
     color: white;
     width: 100%;
+    background-color: #EDDEC2;
 }
 
 @media (min-width: 768px) {
@@ -67,7 +68,7 @@ footer {
 
 .footer-bottom {
     text-align: center;
-    border-top: 1px solid #444;
+    border-top: 1px solid #95b78b;
     padding-top: 1rem;
     font-size: 0.9rem;
     color: #fffcfc;
