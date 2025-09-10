@@ -36,6 +36,13 @@ li.nav-item {
 
 }
 
+.nav-profil {
+    width: 145px ;
+    height: 38px;
+    background-color:rgb(117, 173, 100) ;
+    border-radius: 5px;
+}
+
 /*footer */
 footer {
     flex-shrink: 0;

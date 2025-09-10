@@ -19,11 +19,11 @@
 <nav class="bg_EDDEC2 navbar navbar-expand-lg ">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><img class="navbar_logo" src="/img/LogoVreen.png" alt="Village Green logo"></a>
-    <li class="nav-item">
+    <li class="nav-item d-flex flex-row-reverse">
           <a class="nav-link "  href="/panier"><img style="height:30px; width:30px;" src="/img/shopping-cart.png" ({{ app.session.get('panier') | length}})</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/register">Mon compte</a>
+          <a class="nav-link nav-profil d-flex flex-row-reverse text-center" href="/register">Mon compte</a>
         </li>
       <form class="d-flex" role="search">
         <input class="form-control me-2 text-center nav-search" type="search" placeholder="Rechercher" aria-label="Search"/>
